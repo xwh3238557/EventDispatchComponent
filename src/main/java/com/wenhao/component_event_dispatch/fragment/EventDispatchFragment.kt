@@ -1,7 +1,7 @@
 package com.wenhao.component_event_dispatch.fragment
 
-import com.wenhao.component_event_dispatch.dispatcher.BackPressedEventDispatcher
-import com.wenhao.component_event_dispatch.dispatcher.BackPressedEventManager
+import com.wenhao.component_event_dispatch.manager.BackPressedEventDispatcher
+import com.wenhao.component_event_dispatch.manager.BackPressedEventManager
 
 open class EventDispatchFragment : EventConsumeFragment(), BackPressedEventDispatcher {
     private val backPressedEventManager = object : BackPressedEventManager() {

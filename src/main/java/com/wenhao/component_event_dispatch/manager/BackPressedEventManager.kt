@@ -1,4 +1,4 @@
-package com.wenhao.component_event_dispatch.dispatcher
+package com.wenhao.component_event_dispatch.manager
 
 import android.support.v4.app.FragmentManager
 

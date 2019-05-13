@@ -5,21 +5,21 @@ import android.support.annotation.CallSuper
 import android.support.v4.app.Fragment
 import android.view.MotionEvent
 import android.view.View
-import com.wenhao.component_event_dispatch.dispatcher.BackPressedEventConsumer
-import com.wenhao.component_event_dispatch.dispatcher.OnTouchEventConsumer
+import com.wenhao.component_event_dispatch.manager.BackPressedEventConsumer
+import com.wenhao.component_event_dispatch.manager.OnTouchEventConsumer
+import com.wenhao.component_event_dispatch.manager.TouchEventManager
 
 open class EventConsumeFragment : Fragment(), BackPressedEventConsumer, OnTouchEventConsumer {
+    private val touchEventManager = TouchEventManager()
 
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.setOnTouchListener { _, event -> onTouchEvent(event) }
+        touchEventManager.fragment = this
     }
 
-    @CallSuper
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        //Mantain the root view to react the touch event
-        return event?.let { e -> view?.onTouchEvent(e) } ?: false
+        return false
     }
 
     override fun onBackPressed(): Boolean {

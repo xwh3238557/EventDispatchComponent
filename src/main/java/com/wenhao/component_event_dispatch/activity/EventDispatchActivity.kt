@@ -2,8 +2,8 @@ package com.wenhao.component_event_dispatch.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import com.wenhao.component_event_dispatch.dispatcher.BackPressedEventDispatcher
-import com.wenhao.component_event_dispatch.dispatcher.BackPressedEventManager
+import com.wenhao.component_event_dispatch.manager.BackPressedEventDispatcher
+import com.wenhao.component_event_dispatch.manager.BackPressedEventManager
 
 open class EventDispatchActivity : AppCompatActivity(), BackPressedEventDispatcher {
     private val backPressedEventManager = object : BackPressedEventManager() {
